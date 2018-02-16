@@ -3,7 +3,7 @@
   "name": "ionic2-mask-directive",
   "version": "1.0.9",
   "description": "directive for mask ion-input on ionic2",
-  "main": "index.js",
+  "main": "bundles/ionic2-mask-directive.umd.js",
   "scripts": {
     "build": "tsc --noStrictGenericChecks",
     "prepublish": "npm run build",
@@ -25,11 +25,6 @@
     "url": "https://github.com/tiaguinho/ionic2-mask-directive/issues"
   },
   "homepage": "https://github.com/tiaguinho/ionic2-mask-directive#readme",
-  "ngPackage": {
-    "lib": {
-      "entryFile": "index.ts"
-    }
-  },
   "devDependencies": {
     "typescript": "^2.7.2",
     "ng-packagr": "^2.0.0"
@@ -44,6 +39,11 @@
     "@angular/platform-browser": "5.2.5",
     "@angular/platform-browser-dynamic": "5.2.5",
     "rxjs": "5.5.6",
-    "zone.js": "0.8.20"
-  }
+    "zone.js": "0.8.20",
+    "tslib": "^1.7.1"
+  },
+  "module": "esm5/ionic2-mask-directive.js",
+  "es2015": "esm2015/ionic2-mask-directive.js",
+  "typings": "ionic2-mask-directive.d.ts",
+  "metadata": "ionic2-mask-directive.metadata.json"
 }
