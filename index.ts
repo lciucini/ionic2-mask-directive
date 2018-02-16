@@ -1,9 +1,7 @@
-import { Directive, HostListener, Input } from '@angular/core';
+import { Component, Pipe, PipeTransform, Directive, HostListener, Input } from '@angular/core';
 import { NgControl } from '@angular/forms';
 
-@Directive({
-    selector: '[mask]'
-})
+@Pipe(  {name: '[mask]'})
 export class Ionic2MaskDirective {
 
     @Input() mask: string;
@@ -11,8 +9,8 @@ export class Ionic2MaskDirective {
     constructor(
         private control: NgControl
     ) { }
-    
-    /*when loading dynamically data to the input, without this 
+
+    /*when loading dynamically data to the input, without this
     the mask will only work on keyup event changes */
     @HostListener('change') ngOnChanges() {
         let value = this.control.control.value;
@@ -20,7 +18,7 @@ export class Ionic2MaskDirective {
             this.control.control.setValue(this.format(value));
         }
     }
-    
+
     @HostListener('keyup', ['$event'])
     onKeyUp($event: any) {
         if ($event.keyCode !== 13 && $event.keyCode !== 9) {

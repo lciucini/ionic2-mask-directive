@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Directive, HostListener, Input } from '@angular/core';
+import { Pipe, HostListener, Input } from '@angular/core';
 import { NgControl } from '@angular/forms';
 let Ionic2MaskDirective = class Ionic2MaskDirective {
     constructor(control) {
@@ -79,9 +79,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], Ionic2MaskDirective.prototype, "onKeyUp", null);
 Ionic2MaskDirective = __decorate([
-    Directive({
-        selector: '[mask]'
-    }),
+    Pipe({ name: '[mask]' }),
     __metadata("design:paramtypes", [NgControl])
 ], Ionic2MaskDirective);
 export { Ionic2MaskDirective };

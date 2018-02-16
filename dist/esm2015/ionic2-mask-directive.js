@@ -1,4 +1,4 @@
-import { Directive, HostListener, Input } from '@angular/core';
+import { Pipe, HostListener, Input } from '@angular/core';
 import { NgControl } from '@angular/forms';
 
 /**
@@ -71,9 +71,7 @@ class Ionic2MaskDirective {
     }
 }
 Ionic2MaskDirective.decorators = [
-    { type: Directive, args: [{
-                selector: '[mask]'
-            },] },
+    { type: Pipe, args: [{ name: '[mask]' },] },
 ];
 /** @nocollapse */
 Ionic2MaskDirective.ctorParameters = () => [

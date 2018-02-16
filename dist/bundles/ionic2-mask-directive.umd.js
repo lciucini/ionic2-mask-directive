@@ -119,9 +119,7 @@ var Ionic2MaskDirective = /** @class */ (function () {
     return Ionic2MaskDirective;
 }());
 Ionic2MaskDirective.decorators = [
-    { type: core.Directive, args: [{
-                selector: '[mask]'
-            },] },
+    { type: core.Pipe, args: [{ name: '[mask]' },] },
 ];
 /** @nocollapse */
 Ionic2MaskDirective.ctorParameters = function () { return [

@@ -1,5 +1,5 @@
 import * as tslib_1 from "tslib";
-import { Directive, HostListener, Input } from '@angular/core';
+import { Pipe, HostListener, Input } from '@angular/core';
 import { NgControl } from '@angular/forms';
 /**
  * @fileoverview added by tsickle
@@ -83,9 +83,7 @@ var Ionic2MaskDirective = /** @class */ (function () {
     return Ionic2MaskDirective;
 }());
 Ionic2MaskDirective.decorators = [
-    { type: Directive, args: [{
-                selector: '[mask]'
-            },] },
+    { type: Pipe, args: [{ name: '[mask]' },] },
 ];
 /** @nocollapse */
 Ionic2MaskDirective.ctorParameters = function () { return [
