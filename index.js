@@ -9,32 +9,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Directive, HostListener, Input } from '@angular/core';
 import { NgControl } from '@angular/forms';
-var Ionic2MaskDirective = /** @class */ (function () {
-    function Ionic2MaskDirective(control) {
+let Ionic2MaskDirective = class Ionic2MaskDirective {
+    constructor(control) {
         this.control = control;
     }
     /*when loading dynamically data to the input, without this
     the mask will only work on keyup event changes */
-    Ionic2MaskDirective.prototype.ngOnChanges = function () {
-        var value = this.control.control.value;
+    ngOnChanges() {
+        let value = this.control.control.value;
         if (value) {
             this.control.control.setValue(this.format(value));
         }
-    };
-    Ionic2MaskDirective.prototype.onKeyUp = function ($event) {
+    }
+    onKeyUp($event) {
         if ($event.keyCode !== 13 && $event.keyCode !== 9) {
-            var value = this.control.control.value;
+            let value = this.control.control.value;
             this.control.control.setValue(this.format(value));
         }
-    };
-    Ionic2MaskDirective.prototype.format = function (v) {
-        var s = '';
+    }
+    format(v) {
+        let s = '';
         var matches = v.match(/[a-zA-Z0-9]+/g);
         if (matches !== null) {
-            var value = matches.join('').split('');
+            let value = matches.join('').split('');
             var chars = this.mask.split('');
-            for (var _i = 0, chars_1 = chars; _i < chars_1.length; _i++) {
-                var c = chars_1[_i];
+            for (let c of chars) {
                 if (value.length === 0) {
                     break;
                 }
@@ -61,30 +60,29 @@ var Ionic2MaskDirective = /** @class */ (function () {
             }
         }
         return s;
-    };
-    __decorate([
-        Input(),
-        __metadata("design:type", String)
-    ], Ionic2MaskDirective.prototype, "mask", void 0);
-    __decorate([
-        HostListener('change'),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", []),
-        __metadata("design:returntype", void 0)
-    ], Ionic2MaskDirective.prototype, "ngOnChanges", null);
-    __decorate([
-        HostListener('keyup', ['$event']),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", void 0)
-    ], Ionic2MaskDirective.prototype, "onKeyUp", null);
-    Ionic2MaskDirective = __decorate([
-        Directive({
-            selector: '[mask]'
-        }),
-        __metadata("design:paramtypes", [NgControl])
-    ], Ionic2MaskDirective);
-    return Ionic2MaskDirective;
-}());
+    }
+};
+__decorate([
+    Input(),
+    __metadata("design:type", String)
+], Ionic2MaskDirective.prototype, "mask", void 0);
+__decorate([
+    HostListener('change'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], Ionic2MaskDirective.prototype, "ngOnChanges", null);
+__decorate([
+    HostListener('keyup', ['$event']),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], Ionic2MaskDirective.prototype, "onKeyUp", null);
+Ionic2MaskDirective = __decorate([
+    Directive({
+        selector: '[mask]'
+    }),
+    __metadata("design:paramtypes", [NgControl])
+], Ionic2MaskDirective);
 export { Ionic2MaskDirective };
 //# sourceMappingURL=index.js.map
